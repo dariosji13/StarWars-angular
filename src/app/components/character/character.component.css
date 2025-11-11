@@ -1,0 +1,28 @@
+ .container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+h2 {
+  color: #ffe81f;
+}
+button {
+  background-color: #ffe81f;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ffce00;
+}
+input {
+  margin-right: 10px;
+  padding: 0.4rem;
+} 
+
+

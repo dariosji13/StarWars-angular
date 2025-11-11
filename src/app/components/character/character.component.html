@@ -1,0 +1,59 @@
+<!-- <div class="container" *ngIf="character">
+  <h2>{{ character.name }}</h2>
+  <p><strong>Altura:</strong> {{ character.height }} cm</p>
+  <p><strong>Peso:</strong> {{ character.mass }} kg</p>
+  <p><strong>Género:</strong> {{ character.gender }}</p>
+  <p><strong>Año de nacimiento:</strong> {{ character.birth_year }}</p>
+
+  <div *ngIf="character.vehicles?.length > 0">
+    <h3>Vehículos asociados:</h3>
+    <ul>
+      <li *ngFor="let v of character.vehicles">
+        {{ v.name }} ({{ v.model }})
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="!character.vehicles || character.vehicles.length === 0">
+    <p>Este personaje no tiene vehículos registrados.</p>
+  </div>
+
+  <div class="actions">
+    <input type="number" [(ngModel)]="characterId" min="1" placeholder="ID del personaje">
+    <button (click)="getCharacter()">Buscar</button>
+  </div>
+</div> -->
+
+<div class="container">
+  <h2>Buscar personaje de Star Wars 🔎</h2>
+
+  <form (ngSubmit)="searchCharacter()">
+    <input
+      type="text"
+      [(ngModel)]="searchName"
+      name="searchName"
+      placeholder="Ej: Luke Skywalker"
+      required
+    />
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div *ngIf="loading">Cargando...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="character">
+    <h3>{{ character.name }}</h3>
+    <p><strong>Altura:</strong> {{ character.height }} cm</p>
+    <p><strong>Peso:</strong> {{ character.mass }} kg</p>
+    <p><strong>Color de cabello:</strong> {{ character.hair_color }}</p>
+    <p><strong>Color de piel:</strong> {{ character.skin_color }}</p>
+
+    <div *ngIf="character.vehicles?.length">
+      <h4>Vehículos:</h4>
+      <ul>
+        <li *ngFor="let vehicle of character.vehicles">{{ vehicle.name }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
