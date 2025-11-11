@@ -33,6 +33,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -47,7 +53,22 @@
               ],
               "outputHashing": "all"
             },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ],
+              "sourceMap": true
+            },
             "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -60,6 +81,9 @@
           "configurations": {
             "production": {
               "buildTarget": "swapi-frontend:build:production"
+            },
+            "qa": {
+              "buildTarget": "swapi-frontend:build:qa"
             },
             "development": {
               "buildTarget": "swapi-frontend:build:development"
@@ -89,6 +113,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CharacterComponent } from './components/character/character.component'; 
 
+
 @Component({
   selector: 'app-root',
   standalone: true, 
@@ -10,4 +11,5 @@ import { CharacterComponent } from './components/character/character.component';
 })
 export class AppComponent {
   title = 'SWAPI Frontend';
+  
 }

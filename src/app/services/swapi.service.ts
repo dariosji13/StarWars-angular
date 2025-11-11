@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { environment } from '../../environments/environment'; // 👈 importa entorno actual
 
 @Injectable({
   providedIn: 'root'
 })
 export class SwapiService {
-  private baseUrl = 'https://swapi.dev/api/';
+  private baseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -31,3 +32,5 @@ export class SwapiService {
     );
   }
 }
+
+
