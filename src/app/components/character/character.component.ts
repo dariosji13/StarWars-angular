@@ -1,32 +1,3 @@
-/* import { Component, OnInit } from '@angular/core';
-import { SwapiService } from '../../services/swapi.service';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
-
-@Component({
-  selector: 'app-character',
-  standalone: true, 
-  imports: [CommonModule, FormsModule], 
-  templateUrl: './character.component.html',
-  styleUrls: ['./character.component.css']
-})
-export class CharacterComponent implements OnInit {
-  character: any;
-  characterId = 1;
-
-  constructor(private swapiService: SwapiService) {}
-
-  ngOnInit(): void {
-    this.getCharacter();
-  }
-
-  getCharacter() {
-    this.swapiService.getCharacter(this.characterId).subscribe(data => {
-      this.character = data;
-    });
-  }
-} */
-
 import { Component } from '@angular/core';
 import { SwapiService } from '../../services/swapi.service';
 import { CommonModule } from '@angular/common';
