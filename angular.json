@@ -33,7 +33,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/StarWars-angular/",
+              "baseHref": "https://dariosji13.github.io/StarWars-angular/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -55,7 +55,7 @@
               "outputHashing": "all"
             },
             "qa": {
-              "baseHref": "/StarWars-angular/qa/",
+              "baseHref": "https://dariosji13.github.io/StarWars-angular/qa/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
