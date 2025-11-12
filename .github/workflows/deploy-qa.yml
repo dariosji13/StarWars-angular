@@ -37,3 +37,4 @@ jobs:
           folder: dist/swapi-frontend/browser
           destination_dir: qa
           clean: false
+
