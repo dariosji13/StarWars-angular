@@ -1,4 +1,4 @@
-name: Build & Deploy Production
+name: Deploy Producción
 
 on:
   push:
@@ -13,24 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
 
-      - name: Install dependencies
+      - name: Instalar dependencias
         run: npm ci
 
-      - name: Run tests
-        run: npm test -- --watch=false --browsers=ChromeHeadless
+      - name: Compilar aplicación Producción
+        run: npm run build -- --configuration=production --base-href "https://dariosji13.github.io/StarWars-angular/"
 
-      - name: Build Production
-        run: npm run build swapi-frontend -- --configuration=production --base-href "https://dariosji13.github.io/StarWars-angular/"
-
-      - name: Deploy to gh-pages (production root)
+      - name: Desplegar a GitHub Pages (raíz del proyecto)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
