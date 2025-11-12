@@ -28,12 +28,11 @@ jobs:
         run: npm test -- --watch=false --browsers=ChromeHeadless
 
       - name: Build Production
-        
-        run: npm run build -- --configuration=production --base-href "https://github.com/dariosji13/StarWars-angular"
+        run: npm run build swapi-frontend -- --configuration=production --base-href "https://dariosji13.github.io/StarWars-angular/"
 
-      - name: Deploy to gh-pages (production - root)
+      - name: Deploy to gh-pages (production root)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/swapi-frontend
+          folder: dist/swapi-frontend/browser 
           clean: true

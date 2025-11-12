@@ -28,12 +28,12 @@ jobs:
         run: npm test -- --watch=false --browsers=ChromeHeadless
 
       - name: Build QA
-        run: npm run build -- --configuration=qa --base-href "https://github.com/dariosji13/StarWars-angular/qa"
+        run: npm run build swapi-frontend -- --configuration=qa --base-href "https://dariosji13.github.io/StarWars-angular/qa/"
 
       - name: Deploy to gh-pages (qa folder)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages                # branch target (se crea si no existe)
-          folder: dist/swapi-frontend     # carpeta del build Angular
-          destination_dir: qa             # publicará en gh-pages/qa/
+          branch: gh-pages
+          folder: dist/swapi-frontend/browser   
+          destination_dir: qa                 
           clean: false
