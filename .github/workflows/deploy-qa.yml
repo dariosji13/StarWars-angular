@@ -1,0 +1,36 @@
+name: Deploy QA
+
+on:
+  push:
+    branches:
+      - qa
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar aplicación QA
+        run: npm run build -- --configuration=development --base-href "https://dariosji13.github.io/StarWars-angular/qa/"
+
+      - name: Desplegar a GitHub Pages (carpeta /qa)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist/swapi-frontend/browser
+          destination_dir: qa
+          clean: false

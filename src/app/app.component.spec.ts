@@ -1,29 +1,33 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CharacterComponent } from './components/character/character.component';
+import { SwapiService } from './services/swapi.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [HttpClientTestingModule, CharacterComponent],
+      providers: [SwapiService],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('debería crear la aplicación', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'swapi-frontend' title`, () => {
+  it(`Debería tener el título 'Frontend de SWAPI'.`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('swapi-frontend');
+    expect(app.title).toEqual('SWAPI Frontend'); // <--- corregido
   });
 
-  it('should render title', () => {
+  it('Debería mostrar el título "Star Wars Explorer" en un h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, swapi-frontend');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Star Wars Explorer'); // <--- corregido
   });
 });
