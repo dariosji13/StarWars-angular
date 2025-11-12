@@ -1,0 +1,39 @@
+name: Build & Deploy QA
+
+on:
+  push:
+    branches:
+      - qa
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --watch=false --browsers=ChromeHeadless
+
+      - name: Build QA
+        run: npm run build -- --configuration=qa --base-href "https://github.com/dariosji13/StarWars-angular/qa"
+
+      - name: Deploy to gh-pages (qa folder)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages                # branch target (se crea si no existe)
+          folder: dist/swapi-frontend     # carpeta del build Angular
+          destination_dir: qa             # publicará en gh-pages/qa/
+          clean: false
