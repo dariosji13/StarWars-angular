@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build Production
-        run: npm run build swapi-frontend -- --configuration=production --base-href "https://dariosji13.github.io/StarWars-angular/"
+        run: npm run build swapi-frontend -- --configuration=production --base-href "StarWars-angular/"
 
       - name: Deploy to GitHub Pages (Production)
         uses: JamesIves/github-pages-deploy-action@v4
