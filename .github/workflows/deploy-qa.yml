@@ -1,4 +1,4 @@
-name: Deploy QA
+name: Build & Deploy QA
 
 on:
   push:
@@ -13,21 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Instalar dependencias
+      - name: Install dependencies
         run: npm ci
 
-      - name: Compilar aplicación QA
-        run: npm run build -- --configuration=development --base-href "https://dariosji13.github.io/StarWars-angular/qa/"
+      - name: Build QA
+        run: npm run build swapi-frontend -- --configuration=qa --base-href "StarWars-angular/qa/"
 
-      - name: Desplegar a GitHub Pages (carpeta /qa)
+      - name: Deploy to GitHub Pages (QA)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
