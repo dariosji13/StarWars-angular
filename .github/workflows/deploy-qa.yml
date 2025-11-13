@@ -23,7 +23,7 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
       - name: 🏗️ Build QA
-        run: npm run build swapi-frontend   --base-href "/StarWars-angular/"
+        run: npm run build swapi-frontend --  --base-href "/StarWars-angular/qa/"
       - name: 🔄 Fix SPA routing for GitHub Pages
         run: cp dist/swapi-frontend/browser/index.html dist/swapi-frontend/browser/404.html
       - name: 🔍 Validate build output
