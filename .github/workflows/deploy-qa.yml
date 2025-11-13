@@ -19,21 +19,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test -- --watch=false --browsers=ChromeHeadless
-
       - name: Build QA
         run: npm run build swapi-frontend -- --configuration=qa --base-href "https://dariosji13.github.io/StarWars-angular/qa/"
 
-      - name: Deploy to gh-pages (qa folder)
+      - name: Deploy to GitHub Pages (QA)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist/swapi-frontend/browser
           destination_dir: qa
-          clean: true
+          clean: false

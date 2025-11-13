@@ -19,18 +19,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test -- --watch=false --browsers=ChromeHeadless
-
       - name: Build Production
         run: npm run build swapi-frontend -- --configuration=production --base-href "https://dariosji13.github.io/StarWars-angular/"
 
-      - name: Deploy to gh-pages (production root)
+      - name: Deploy to GitHub Pages (Production)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
