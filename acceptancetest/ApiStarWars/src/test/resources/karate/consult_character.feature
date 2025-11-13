@@ -27,3 +27,4 @@ Feature: We want to test the Star Wars API to verify that it loads the desired c
       | armando | 200    | []       |
       | **      | 200    | []       |
       | 1245697 | 200    | []       |
+
