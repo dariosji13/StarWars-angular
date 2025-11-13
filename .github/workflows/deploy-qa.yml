@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build QA
-        run: npm run build swapi-frontend -- --configuration=qa --base-href "StarWars-angular/qa/"
+        run: npm run build swapi-frontend -- --configuration=qa --base-href "/StarWars-angular/qa/"
 
       - name: Deploy to GitHub Pages (QA)
         uses: JamesIves/github-pages-deploy-action@v4
