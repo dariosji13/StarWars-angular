@@ -33,3 +33,5 @@ jobs:
           branch: gh-pages
           folder: dist/swapi-frontend/browser
           clean: true
+          clean_exclude:
+            qa
