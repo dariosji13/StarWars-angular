@@ -1,0 +1,14 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="16.22211">
+<testsuite name="tests\CharacterSearchPage.spec.ts" timestamp="2025-11-13T16:23:49.469Z" hostname="Edge" tests="2" failures="0" skipped="0" time="5.437" errors="0">
+<testcase name="Validar datos del personaje Yoda sin vehiculos" classname="tests\CharacterSearchPage.spec.ts" time="2.786">
+</testcase>
+<testcase name="Validar datos del personaje Yoda con vehiculos" classname="tests\CharacterSearchPage.spec.ts" time="2.651">
+</testcase>
+</testsuite>
+<testsuite name="tests\CharacterSearchPage.spec.ts" timestamp="2025-11-13T16:23:49.469Z" hostname="Chrome" tests="2" failures="0" skipped="0" time="5.472" errors="0">
+<testcase name="Validar datos del personaje Yoda sin vehiculos" classname="tests\CharacterSearchPage.spec.ts" time="2.842">
+</testcase>
+<testcase name="Validar datos del personaje Yoda con vehiculos" classname="tests\CharacterSearchPage.spec.ts" time="2.63">
+</testcase>
+</testsuite>
+</testsuites>
