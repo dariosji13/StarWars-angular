@@ -28,12 +28,12 @@ jobs:
         run: npm run build swapi-frontend -- --configuration=qa --base-href "/StarWars-angular/qa/"
         
       - name: Validar ruta
-        run:  ls -l dist/swapi-frontend/browser
+        run:  ls -l dist/swapi-frontend/browser/browser
 
       - name: Deploy to GitHub Pages (QA)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/swapi-frontend/browser
+          folder: dist/swapi-frontend/browser/browser
           target-folder: qa
           clean: false
