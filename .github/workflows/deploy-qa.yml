@@ -24,8 +24,7 @@ jobs:
         run: npm ci
       - name: 🏗️ Build QA
         run: npm run build swapi-frontend -- --configuration=qa --base-href "/StarWars-angular/qa/"
-      - name: 🧱 Add 404 redirect for Angular SPA
-        run: cp dist/swapi-frontend/browser/index.html dist/swapi-frontend/browser/404.html
+      
       - name: 🔍 Validate build output
         run: |
           echo "📁 Contenido de dist/swapi-frontend/browser:"
